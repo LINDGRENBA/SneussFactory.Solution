@@ -5,3 +5,7 @@
 .list-header {
   text-decoration: underline;
 }
+
+.emphasize {
+  font-weight: bold;
+}

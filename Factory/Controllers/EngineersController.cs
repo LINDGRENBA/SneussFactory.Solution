@@ -15,15 +15,15 @@ namespace Factory.Controllers
       _db = db;
     }
 
-    // public ActionResult Index()
-    // {
-    //   return View();
-    // }
+    public ActionResult Index()
+    {
+      return View(_db.Engineers.OrderBy(engineers => engineers.Name).ToList());
+    }
 
-    //     public ActionResult Create()
-    // {
-    //   return View();
-    // }
+        public ActionResult Create()
+    {
+      return View();
+    }
 
     // [HttpPost]
     // public ActionResult Create()
