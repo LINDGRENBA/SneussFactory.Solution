@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace NAMESPACE.Models
+namespace Factory.Models
 {
-  public class PROJECTNAMEContext : DbContext
+  public class FactoryContext : DbContext
   {
-    public virtual DbSet<ClassNameOneSingular> ClassNameOnePlural { get; set; }
-    public DbSet<ClassNameTwoSingular> ClassNameTwoPlural { get; set; }
-    public DbSet<JoinTableSingular> JoinTablePlural /*singular or plural?*/ {get; set; }
+    public virtual DbSet<Engineer> Engineers { get; set; }
+    public DbSet<Machine> Machines { get; set; }
+    public DbSet<EngineerMachine> EngineerMachines {get; set; }
     
-    public PROJECTNAMEContext(DbContextOptions options) : base(options) { }
+    public FactoryContext(DbContextOptions options) : base(options) { }
   }
 }
