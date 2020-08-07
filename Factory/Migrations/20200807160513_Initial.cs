@@ -38,7 +38,7 @@ namespace Factory.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EngineerMachines",
+                name: "EngineerMachine",
                 columns: table => new
                 {
                     EngineerMachineId = table.Column<int>(nullable: false)
