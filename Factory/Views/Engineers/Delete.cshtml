@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<div class="warning">
+  <h1>Delete this Engineer's record?</h1>
+  <h2>@Html.DisplayFor(model => model.Name)</h2>
+</div>
+
+<div class="text-center">
+  @using (Html.BeginForm())
+  {
+    <button type="submit", class="btn btn-default">Delete</button>
+  }
+</div>

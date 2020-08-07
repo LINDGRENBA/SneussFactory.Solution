@@ -67,10 +67,10 @@ namespace Factory.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult AddMachine()
-    // {
-
-    // }
+    public ActionResult AddMachine(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+    }
 
     // [HttpPost]
     // public ActionResult AddMachine()
@@ -78,16 +78,20 @@ namespace Factory.Controllers
 
     // }
 
-    // public ActionResult Delete()
-    // {
+    public ActionResult Delete(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
+    }
 
-    // }
-
-    // [HttpPost, ActionName("Delete")]
-    // public ActionResult DeleteConfirmed()
-    // {
-
-    // }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      _db.Engineers.Remove(thisEngineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // [HttpPost]
     // public ActionResult DeleteMachine()

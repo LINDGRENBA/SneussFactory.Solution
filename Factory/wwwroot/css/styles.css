@@ -32,3 +32,15 @@
 .engineer-details, .machine-details {
   padding: 50px;
 }
+
+.warning {
+  text-align: center;
+  border: 2px dotted red;
+  width: 70%;
+  margin: 50px auto;
+}
+
+/* BUTTONS */
+li button {
+  font-size: 0.7em;
+}
