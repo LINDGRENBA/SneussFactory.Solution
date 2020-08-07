@@ -4,24 +4,28 @@
 
 @model Factory.Models.Engineer
 
-<h1>Engineer Details</h1>
+<div class="text-center">
+  <h1>Engineer Details</h1>
 
-<div class="engineer-details">
-  <p>@Html.DisplayFor(model => model.Name): @Html.DisplayFor(model => model.EngineerId)</p>
-  <p>@Html.DisplayFor(model => model.HireDate)</p>
+  <div class="engineer-details">
+    <p>Name: @Html.DisplayFor(model => model.Name)</p>
+    <p>Employee ID: @Html.DisplayFor(model => model.EngineerId)</p>
+    <p>Hire Date: @Html.DisplayFor(model => model.HireDate)</p>
+    @* styling goal = hide timestamp *@
+  </div>
+
+  @if(Model.Machines.Count == 0)
+  {
+    <p>This Engineer has not worked on any machines yet.</p>
+  }
+  else
+  {
+    <h4>Machines this Engineer is licensed to repair:</h4>
+    <ul>
+      @foreach(var join in Model.Machines)
+      {
+        <li class="machine-list">@join.Engineer.Name</li>
+      }
+    </ul>
+  }
 </div>
-
-@if(Model.Machines.Count == 0)
-{
-  <h3>This Engineer has not worked on any machines yet.</h3>
-}
-else
-{
-  <h4>Machines this Engineer is licensed to repair:</h4>
-  <ul>
-    @foreach(var join in Model.Machines)
-    {
-      <li class="machine-list">@join.Engineer.Name</li>
-    }
-  </ul>
-}
