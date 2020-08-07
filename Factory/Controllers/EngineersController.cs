@@ -20,17 +20,18 @@ namespace Factory.Controllers
       return View(_db.Engineers.OrderBy(engineers => engineers.Name).ToList());
     }
 
-        public ActionResult Create()
+    public ActionResult Create()
     {
       return View();
     }
 
-    // [HttpPost]
-    // public ActionResult Create()
-    // {
-
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Create(Engineer engineer)
+    {
+      _db.Engineers.Add(engineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // public ActionResult Details()
     // {

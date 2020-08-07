@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer;
+
+<div class="text-center">
+<h1>Add a Sneuss Factory Engineer</h1>
+
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { @class ="form-control", required="required" })
+
+      @Html.LabelFor(model => model.HireDate)
+      @Html.TextBoxFor(model => model.HireDate, new { @type="date", @class ="form-control", required="required" })
+
+      <button type="submit" class="btn btn-default">Add Engineer</button>
+    }
+  </div>
+</div>
