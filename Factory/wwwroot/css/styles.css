@@ -29,6 +29,6 @@
   margin-top: 20px;
 }
 
-.engineer-details {
+.engineer-details, .machine-details {
   padding: 50px;
 }

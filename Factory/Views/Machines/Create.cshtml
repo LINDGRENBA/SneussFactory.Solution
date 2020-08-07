@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<div class="text-center">
+<h1>Add a Sneuss Factory Machine</h1>
+
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Type)
+      @Html.TextBoxFor(model => model.Type, new { @class ="form-control", required="required" })
+
+      @Html.LabelFor(model => model.Installation)
+      @Html.TextBoxFor(model => model.Installation, new { @type="date", @class ="form-control", required="required" })
+
+      @Html.LabelFor(model => model.Description)
+      @Html.TextBoxFor(model => model.Description, new { @class ="form-control", required="required" })
+
+      <button type="submit" class="btn btn-default">Add Machine</button>
+    }
+  </div>
+</div>

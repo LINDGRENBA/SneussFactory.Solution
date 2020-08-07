@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<div class="text-center">
+  <h1>Machine Details</h1>
+
+  <div class="machine-details">
+    <p>Type: @Html.DisplayFor(model => model.Type)</p>
+    <p>Serial Number: @Html.DisplayFor(model => model.MachineId)</p>
+    <p>Installation Date: @Html.DisplayFor(model => model.Installation)</p>
+    <p>Description: @Html.DisplayFor(model => model.Description)</p>
+    @* styling goal = hide timestamp *@
+  </div>
+
+  @if(Model.Engineers.Count == 0)
+  {
+    <p>This Machine has not been repaired by any Engineers yet.</p>
+  }
+  else
+  {
+    <h4>Engineers licensed to repair this Machine:</h4>
+    <ul>
+      @foreach(var join in Model.Engineers)
+      {
+        <li class="engineer-list">@join.Machine.Type</li>
+      }
+    </ul>
+  }
+</div>

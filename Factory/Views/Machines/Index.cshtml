@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+@model List<Factory.Models.Machine>;
+
+<div class="text-center">
+<h1>Sneuss Factory Machines</h1>
+
+@if(Model.Count == 0)
+{
+  <h3>There are currently no Machines on record.</h3>
+  <p>Want to add a Machine? Click on the <span class="emphasize">Add New Machine</span> link at the top of the page.</p>
+}
+else
+{
+  <p>Click on a Machine to view its details.</p>
+  @foreach(Machine machine in Model)
+  {
+    <li class="machine-list">@Html.ActionLink($"{machine.Type}", "Details", new {id = machine.MachineId})</li>
+  }
+}
+</div>
