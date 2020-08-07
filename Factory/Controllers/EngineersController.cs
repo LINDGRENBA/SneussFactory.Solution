@@ -19,5 +19,61 @@ namespace Factory.Controllers
     {
       return View();
     }
+
+        public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create()
+    {
+
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details()
+    {
+
+    }
+
+    public ActionResult Edit()
+    {
+
+    }
+
+    [HttpPost]
+    public ActionResult Edit()
+    {
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult AddMachine()
+    {
+
+    }
+
+    [HttpPost]
+    public ActionResult AddMachine()
+    {
+
+    }
+
+    public ActionResult Delete()
+    {
+
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed()
+    {
+
+    }
+
+    [HttpPost]
+    public ActionResult DeleteMachine()
+    {
+      
+    }
   }
 }
