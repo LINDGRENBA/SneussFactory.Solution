@@ -95,7 +95,7 @@ You can also populate the Database from the VS Code terminal using Migrations.
 | Bug : Message |  Situation  | Resolved (Y/N) |  How was the issue resolved?  |
 | ------- | ----- | ------ | ------- |
 | MySqlException: Table 'brittany_lindgren_factory.engineermachine' doesn't exist | Add new Machine | N |  |
-| DbUpdateException: An error occurred while updating the entries. See the inner exception for details | Add new Machine | N |  |
+| DbUpdateException: An error occurred while updating the entries. See the inner exception for details | Add new Machine | N | Attempt to run `dotnet ef database update`, terminal returned message that there was nothing to update. Navigated to MySQL Workbench, dropped brittany_lindgren_factory Schema. Returned to project terminal, re-ran initial migration command and update command. |
 
 
 ## Support and contact details
