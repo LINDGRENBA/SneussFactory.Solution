@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
@@ -22,13 +23,18 @@ namespace Factory.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Type");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Engineer engineer)
+    public ActionResult Create(Engineer engineer, int MachineId)
     {
       _db.Engineers.Add(engineer);
+      if(MachineId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineer.EngineerId, MachineId = MachineId});
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -42,16 +48,24 @@ namespace Factory.Controllers
         return View(thisEngineer);
     }
 
-    // public ActionResult Edit()
-    // {
+    public ActionResult Edit(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Type");
+      return View(thisEngineer);
+    }
 
-    // }
-
-    // [HttpPost]
-    // public ActionResult Edit()
-    // {
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Edit(Engineer engineer, int MachineId)
+    {
+      if(MachineId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineer.EngineerId, MachineId = MachineId});
+      }
+      _db.Entry(engineer).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // public ActionResult AddMachine()
     // {
