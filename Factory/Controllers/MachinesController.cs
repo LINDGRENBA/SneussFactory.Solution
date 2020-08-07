@@ -15,27 +15,32 @@ namespace Factory.Controllers
       _db = db;
     }
 
-    // public ActionResult Index()
-    // {
-    //   return View();
-    // }
+    public ActionResult Index()
+    {
+      return View(_db.Machines.OrderBy(machines => machines.Type).ToList());
+    }
 
-    // public ActionResult Create()
-    // {
-    //   return View();
-    // }
+    public ActionResult Create()
+    {
+      return View();
+    }
 
-    // [HttpPost]
-    // public ActionResult Create()
-    // {
+    [HttpPost]
+    public ActionResult Create(Machine machine)
+    {
+      _db.Machines.Add(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-    //   return RedirectToAction("Index");
-    // }
-
-    // public ActionResult Details()
-    // {
-
-    // }
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+        .Include(machine => machine.Engineers)
+        .ThenInclude(join => join.Engineer)
+        .FirstOrDefault(machine => machine.MachineId == id);
+        return View(thisMachine);
+    }
 
     // public ActionResult Edit()
     // {
