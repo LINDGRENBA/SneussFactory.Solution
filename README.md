@@ -75,7 +75,46 @@ To set up the database for this project, you can follow the steps below to impor
 
 ##### SQL SCHEMA QUERY
 ```
-CREATE DATABASE IF NOT EXISTS brittany_lindgren; USE brittany_lindgren;
+CREATE DATABASE IF NOT EXISTS brittany_lindgren_factory; USE brittany_lindgren_factory;
+DROP TABLE IF EXISTS `__efmigrationshistory`;
+
+CREATE TABLE `__efmigrationshistory` (
+  `MigrationId` varchar(95) NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL,
+  PRIMARY KEY (`MigrationId`)
+) 
+
+DROP TABLE IF EXISTS `engineermachine`;
+
+CREATE TABLE `engineermachine` (
+  `EngineerMachineId` int NOT NULL AUTO_INCREMENT,
+  `EngineerId` int NOT NULL,
+  `MachineId` int NOT NULL,
+  PRIMARY KEY (`EngineerMachineId`),
+  KEY `FK_EngineerMachines_Engineers_EngineerId` (`EngineerId`),
+  KEY `FK_EngineerMachines_Machines_MachineId` (`MachineId`),
+  CONSTRAINT `FK_EngineerMachines_Engineers_EngineerId` FOREIGN KEY (`EngineerId`) REFERENCES `engineers` (`EngineerId`) ON DELETE CASCADE,
+  CONSTRAINT `FK_EngineerMachines_Machines_MachineId` FOREIGN KEY (`MachineId`) REFERENCES `machines` (`MachineId`) ON DELETE CASCADE
+) 
+
+DROP TABLE IF EXISTS `engineers`;
+
+CREATE TABLE `engineers` (
+  `EngineerId` int NOT NULL AUTO_INCREMENT,
+  `Name` longtext,
+  `HireDate` datetime(6) NOT NULL,
+  PRIMARY KEY (`EngineerId`)
+)
+
+DROP TABLE IF EXISTS `machines`;
+
+CREATE TABLE `machines` (
+  `MachineId` int NOT NULL AUTO_INCREMENT,
+  `Type` longtext,
+  `Description` longtext,
+  `Installation` datetime(6) NOT NULL,
+  PRIMARY KEY (`MachineId`)
+)
 
 ```
 
