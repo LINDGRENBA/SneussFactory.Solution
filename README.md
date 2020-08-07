@@ -73,6 +73,8 @@ To set up the database for this project, you can follow the steps below to impor
 * Copy paste the code below into the Query tab.
 * Then click 'execute' (this may appear as a lightening bolt icon).
 
+**NOTE** database is listed in appsettings.json as `brittany_lindgren_factory` to avoid overwriting author's other databases. If you experience any issues, check to make sure that all references to database in project match name of MySQL Workbench Schema.
+
 ##### SQL SCHEMA QUERY
 ```
 CREATE DATABASE IF NOT EXISTS brittany_lindgren_factory; USE brittany_lindgren_factory;
