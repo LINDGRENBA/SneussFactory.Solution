@@ -12,7 +12,7 @@
     <p>Employee ID: @Html.DisplayFor(model => model.EngineerId)</p>
     <p>Hire Date: @Html.DisplayFor(model => model.HireDate)</p>
     @* styling goal = hide timestamp *@
-    <button>@Html.ActionLink("Edit Details", "Edit", new { id = Model.EngineerId })</button> | <button>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</button>
+    <button>@Html.ActionLink("Edit Details", "Edit", new { id = Model.EngineerId })</button> | <button>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</button> | <button>@Html.ActionLink("Add Machine", "AddMachine", new { id = Model.EngineerId})</button>
   </div>
 
   @if(Model.Machines.Count == 0)

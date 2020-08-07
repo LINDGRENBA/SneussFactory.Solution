@@ -70,13 +70,20 @@ namespace Factory.Controllers
     public ActionResult AddMachine(int id)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Type");
+      return View(thisEngineer);
     }
 
-    // [HttpPost]
-    // public ActionResult AddMachine()
-    // {
-
-    // }
+    [HttpPost]
+    public ActionResult AddMachine(Engineer engineer, int MachineId)
+    {
+      if(MachineId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineer.EngineerId, MachineId = MachineId});
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     public ActionResult Delete(int id)
     {
