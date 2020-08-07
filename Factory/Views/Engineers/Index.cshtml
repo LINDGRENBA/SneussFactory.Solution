@@ -15,9 +15,10 @@
 }
 else
 {
+  <p>Click on the Engineer's name to view their details.</p>
   @foreach(Engineer engineer in Model)
   {
-    <li>@Html.ActionLink($"{engineer.Name}", "Details", new {id = engineer.EngineerId})</li>
+    <li class="engineer-list">@Html.ActionLink($"{engineer.Name}", "Details", new {id = engineer.EngineerId})</li>
   }
 }
 

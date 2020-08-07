@@ -9,3 +9,22 @@
 .emphasize {
   font-weight: bold;
 }
+
+/* FORMS */
+
+.form {
+  padding: 50px 100px;
+}
+
+.form-control {
+  margin-bottom: 50px;
+}
+
+/* VIEWS */
+
+.engineer-list {
+  font-size: 1.5em;
+  list-style-type: circle;
+  padding-right: 25px;
+  margin-top: 20px;
+}
