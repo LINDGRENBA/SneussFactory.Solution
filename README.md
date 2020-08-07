@@ -32,7 +32,7 @@ _Welcome Dr. Sneuss! This application is here to help simplify your life and kee
 
 ## Setup/Installation Requirements
 
-  1. Follow this [link to the project repository](PUT LINK HERE) on GitHub.  
+  1. Follow this [link to the project repository](https://github.com/LINDGRENBA/SneussFactory.Solution) on GitHub.  
   2. Click on the "Clone or download" button to copy the project link.     
   3. If you are comfortable with the command line, you can copy the project link and clone it through your command line with the command `git clone`. Otherwise, I recommend choosing "**Download ZIP**".     
    4. Once the ZIP file has finished downloading, you can right click on the file to view the zip folder in your downloads.     
@@ -41,8 +41,7 @@ _Welcome Dr. Sneuss! This application is here to help simplify your life and kee
   7. To view the code itself, right click, choose **open with...** and open using a text editor such as VS Code or Atom, etc.
   8. Once you are inside of your text editor, open the terminal. If you are in VS Code for example, this can be done by clicking on `Terminal` at the top of the editor and then selecting `New Terminal`. **You can navigate to different directories in the project by typing `cd DirectoryName` to go down into specific directories or `cd ..` to go back up one directory. 
   9. Navigate to the Factory directory by typing `cd Factory` in your terminal and hitting `enter`. Then type the command `dotnet restore`,`dotnet build`, then `dotnet run` into your terminal and hit enter. You should see files appear inside of your bin folder. The bin folder should appear greyed out. 
-  10. Click on the link provided after you see `now listening on: ... ` appear in your terminal.
-
+  
 
 #### Additional Setup/Installation Notes:
 
@@ -84,6 +83,11 @@ CREATE DATABASE IF NOT EXISTS brittany_lindgren; USE brittany_lindgren;
 You can also populate the Database from the VS Code terminal using Migrations.
 *  Enter the following into the VS Code terminal `dotnet ef migrations add Initial` and hit Enter
 * Now enter `dotnet ef dtabase update` and hit Enter
+
+
+#### Run the Application
+* After you have completed setup and installation and configured the database, you can type the command `dotnet run` into your terminal.
+* Once you see the message `now listening on: ... ` appear in your terminal, open your browser and type `localhost:5000` as the url. This should direct you to the main page of this project.
 
 
 ## Known Bugs
