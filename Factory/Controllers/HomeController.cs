@@ -18,7 +18,10 @@ namespace Factory.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      var model = _db.EngineerMachine.ToList();
+      ViewBag.Engineer = _db.Engineers.OrderBy(engineer => engineer.Name).ToList();
+      ViewBag.Machine = _db.Machines.OrderBy(machine => machine.Type).ToList();
+      return View(model);
     }
   }
 }

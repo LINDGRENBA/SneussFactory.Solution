@@ -2,6 +2,9 @@
   Layout = "_Layout";
 }
 
+@using Factory.Models;
+@model List<Factory.Models.EngineerMachine>
+
 <div class="text-center container">
   <h1>Welcome, Dr. Sneuss's, to your Factory App!</h1>
   <h3>Here you can organize your Factory. Take a look around.</h3>
@@ -9,9 +12,35 @@
   <div class="row list">
     <div class="col-md-6 col-sm-12">
       <h4 class="list-header">Sneuss Factory Engineers</h4>
+      @if(ViewBag.Engineer.Count == 0)
+      {
+        <h3>There are currently no Engineers on record.</h3>
+      }
+      else
+      {
+        <ul>
+          @foreach (var join in Model)
+          {
+            <li class="home-list">@join.Engineer.Name</li>
+          }
+        </ul>
+      }
     </div>
     <div class="col-md-6 col-sm-12">
       <h4 class="list-header">Sneuss Factory Machines</h4>
+      @if(ViewBag.Machine.Count == 0)
+      {
+        <h3>There are currently no Machines on record.</h3>
+      }
+      else
+      {
+        <ul>
+          @foreach (var join in Model)
+          {
+            <li class="home-list">@join.Machine.Type</li>
+          }
+        </ul>
+      }
     </div>
   </div>
 </div>
