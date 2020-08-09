@@ -61,7 +61,7 @@ li button {
   font-size: 0.7em;
 }
 
-.machine-cancel-delete, .machine-delete {
+.cancel-delete, .delete-form {
   text-align: center;
   display: inline-block;
   margin-left: auto;
