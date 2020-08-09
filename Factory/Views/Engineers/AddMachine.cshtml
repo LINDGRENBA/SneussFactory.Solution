@@ -9,13 +9,15 @@
 
   <p>Add a machine to @Html.DisplayFor(model => model.Name)'s record</p>
 
-  @using (Html.BeginForm())
-  {
-    @Html.HiddenFor(model => model.EngineerId)
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.Label("Select Machine")
-    @Html.DropDownList("MachineId")
+      @Html.Label("Select Machine")
+      @Html.DropDownList("MachineId", null, new { @class="form-control" })
 
-    <button type="submit">Save</button>
-  }
+      <button type="submit">Save</button>
+    }
+  </div>
 </div>
