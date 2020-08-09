@@ -4,6 +4,7 @@
 
 @using Factory.Models;
 @model List<Factory.Models.EngineerMachine>
+  @* not really using Model here, just viewbag. refactor controller and index view? *@
 
 <div class="text-center container">
   <h1>Welcome, Dr. Sneuss's, to your Factory App!</h1>
@@ -19,9 +20,9 @@
       else
       {
         <ul>
-          @foreach (var join in Model)
+          @foreach (Engineer engineer in ViewBag.Engineer)
           {
-            <li class="home-list">@join.Engineer.Name</li>
+            <li class="home-list">@engineer.Name</li>
           }
         </ul>
       }
@@ -35,9 +36,9 @@
       else
       {
         <ul>
-          @foreach (var join in Model)
+          @foreach (Machine machine in ViewBag.Machine)
           {
-            <li class="home-list">@join.Machine.Type</li>
+            <li class="home-list">@machine.Type</li>
           }
         </ul>
       }
