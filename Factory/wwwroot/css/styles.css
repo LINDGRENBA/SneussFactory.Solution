@@ -26,16 +26,9 @@ body {
 
 /* VIEWS */
 
-.home-list {
+.engineer-list, .machine-list, .home-list {
   font-size: 1.5em;
   list-style-type: none;
-  padding-right: 25px;
-  margin-top: 20px;
-}
-
-.engineer-list, .machine-list {
-  font-size: 1.5em;
-  list-style-type: circle;
   padding-right: 25px;
   margin-top: 20px;
 }

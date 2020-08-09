@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<div class="text-center">
+  <h1>Add an Engineer</h1>
+
+  <p>Add an Engineer to the @Html.DisplayFor(model => model.Type) record</p>
+
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.MachineId)
+
+      @Html.Label("Select Engineer")
+      @Html.DropDownList("EngineerId", null, new { @class="form-control" })
+
+      <button type="submit">Save</button>
+    }
+  </div>
+</div>
