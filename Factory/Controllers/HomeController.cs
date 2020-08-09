@@ -22,6 +22,7 @@ namespace Factory.Controllers
       ViewBag.Engineer = _db.Engineers.OrderBy(engineer => engineer.Name).ToList();
       ViewBag.Machine = _db.Machines.OrderBy(machine => machine.Type).ToList();
       return View(model);
+      // refactor to use engineer or machine as model, not really using join table here
     }
   }
 }
