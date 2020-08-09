@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<div class="warning">
+  <h1>Delete this Machines's record?</h1>
+  <p class="warning-text">This action will permanently delete this machine from your records.</p>
+  <h2>@Html.DisplayFor(model => model.Type)</h2>
+</div>
+
+
+<div class="machine-delete">
+  @using (Html.BeginForm())
+  {
+    <button type="submit", class="btn btn-danger">Delete</button>
+  }
+</div>
+<div class="machine-cancel-delete">
+  <button class="btn btn-warning">@Html.ActionLink("Cancel", "Index", new { @id="machine-cancelDelete"})</button>
+</div>
