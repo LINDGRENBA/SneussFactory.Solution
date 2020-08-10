@@ -123,7 +123,7 @@ CREATE TABLE `machines` (
 #### Code First with Migrations
 You can also populate the Database from the VS Code terminal using Migrations.
 *  Enter the following into the VS Code terminal `dotnet ef migrations add Initial` and hit Enter
-* Now enter `dotnet ef dtabase update` and hit Enter
+* Now enter `dotnet ef database update` and hit Enter
 
 
 #### Run the Application
