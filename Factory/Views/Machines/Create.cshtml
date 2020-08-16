@@ -19,9 +19,6 @@
       @Html.LabelFor(model => model.Description)
       @Html.TextBoxFor(model => model.Description, new { @class ="form-control", required="required" })
 
-      @Html.Label("Engineers that are licensed to repaired this Machine")
-      @Html.DropDownList("EngineerId", null, new { @class="form-control" })
-
       <button type="submit" class="btn btn-default">Add Machine</button>
     }
   </div>
