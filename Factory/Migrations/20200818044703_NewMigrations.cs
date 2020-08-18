@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Factory.Migrations
 {
-    public partial class Initial : Migration
+    public partial class NewMigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,15 +48,15 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EngineerMachines", x => x.EngineerMachineId);
+                    table.PrimaryKey("PK_EngineerMachine", x => x.EngineerMachineId);
                     table.ForeignKey(
-                        name: "FK_EngineerMachines_Engineers_EngineerId",
+                        name: "FK_EngineerMachine_Engineers_EngineerId",
                         column: x => x.EngineerId,
                         principalTable: "Engineers",
                         principalColumn: "EngineerId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EngineerMachines_Machines_MachineId",
+                        name: "FK_EngineerMachine_Machines_MachineId",
                         column: x => x.MachineId,
                         principalTable: "Machines",
                         principalColumn: "MachineId",
@@ -64,20 +64,20 @@ namespace Factory.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_EngineerMachines_EngineerId",
-                table: "EngineerMachines",
+                name: "IX_EngineerMachine_EngineerId",
+                table: "EngineerMachine",
                 column: "EngineerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EngineerMachines_MachineId",
-                table: "EngineerMachines",
+                name: "IX_EngineerMachine_MachineId",
+                table: "EngineerMachine",
                 column: "MachineId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "EngineerMachines");
+                name: "EngineerMachine");
 
             migrationBuilder.DropTable(
                 name: "Engineers");
