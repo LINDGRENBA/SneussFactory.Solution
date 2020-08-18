@@ -9,6 +9,11 @@
 
 _Welcome Dr. Sneuss! This application is here to help simplify your life and keep track of all your engineers and machines!_ 
 
+## Important Note: 
+
+The prompt for this project was a play on a well known author. It was after the completion of this project that it was brought to my attention that this author has used racist and stereotypical depictions of people of color in his work. I would like to apologize if anyone viewing this document is triggered or feels that it is problematic and invite the viewer to convey that to me, if the viewer feels compelled and also comfortable doing so. Also, if anyone would like to learn more about this topic, here is an [article written by Teaching Tolerance](https://www.tolerance.org/magazine/its-time-to-talk-about-dr-seuss) that goes more in depth on this subject.
+
+
 ## Specifications
 
 | Behavior   |   Input   |  Output |  Met? (Y/N)  |
